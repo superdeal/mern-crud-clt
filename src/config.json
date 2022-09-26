@@ -1,0 +1,4 @@
+{
+    "ENV": "development",
+    "BASE_URL": "https://mernserverside.herokuapp.com"
+}

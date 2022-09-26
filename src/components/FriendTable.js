@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Table } from "react-bootstrap";
 import DeleteConfirm from "./DeleteConfirm";
 import UpdateModal from "./UpdateModal";
+import Config from "../config.json";
 
 const FriendTable = (props) => {
 
@@ -13,7 +14,7 @@ const FriendTable = (props) => {
     const [selectedUpdateItem, setSelectedUpdateItem] = useState({});
 
     useEffect(() => {
-      Axios.get("http://localhost:4000/read")
+      Axios.get(Config.BASE_URL+"/read")
         .then((response) => {
           if(!response.data)
             alert("The list is empty!");
@@ -29,7 +30,7 @@ const FriendTable = (props) => {
 
     const deleteFriend = () => {
         setDeleteModalShow(false);
-        Axios.delete(`http://localhost:4000/delete/${selectedDeletedItem._id}`)
+        Axios.delete(Config.BASE_URL+`/delete/${selectedDeletedItem._id}`)
         .then((response) => {
           if(!response.data)
             alert("Delete Error!");
@@ -47,7 +48,7 @@ const FriendTable = (props) => {
     
     const updateOneFriend = () => {
         setUpdateModalShow(false);
-        Axios.put(`http://localhost:4000/update/`, {id: selectedUpdateItem._id, name: selectedUpdateItem.name, age: selectedUpdateItem.age })
+        Axios.put(Config.BASE_URL+`/update/`, {id: selectedUpdateItem._id, name: selectedUpdateItem.name, age: selectedUpdateItem.age })
         .then((response) => {
           if(!response.data)
             alert("Update Error!");

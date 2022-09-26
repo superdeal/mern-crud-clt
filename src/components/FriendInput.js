@@ -1,10 +1,11 @@
 import React from "react";
 import Axios  from 'axios';
+import Config from "../config.json";
 
 const FriendInput = (props) => {
     const AddFriend = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:4000/addFriend", {name: props.name, age: props.age})
+        Axios.post(Config.BASE_URL+"/addFriend", {name: props.name, age: props.age})
             .then((response) => {
                 if(!response.data)
                     alert("No response data!");
