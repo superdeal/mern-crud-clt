@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-    <Container>
+    <Container className='p-0'>
       <HeaderNav></HeaderNav>
       <FriendInput name={name} setName={setName} age={age} setAge={setAge} friendList={friendList} setFriendList={setFriendList}></FriendInput>
       <FriendTable friendList={friendList} setFriendList={setFriendList}></FriendTable>
