@@ -25,7 +25,7 @@ const FriendInput = (props) => {
             <div className="col-sm-3">
                 <input type="text" className="form-control mb-2 me-sm-2" id="inputName" aria-describedby="nameHelp" placeholder="Name" onChange={(e) => props.setName(e.target.value)}/>
             </div>
-            <label htmlFor="inputAge" className="col-sm-2 col-form-label">Password</label>
+            <label htmlFor="inputAge" className="col-sm-2 col-form-label">Age</label>
             <div className="col-sm-3">
                 <input type="text" className="form-control mb-2 me-sm-2" id="inputAge" placeholder="Age" onChange={(e) => props.setAge(e.target.value)}/>
             </div>
